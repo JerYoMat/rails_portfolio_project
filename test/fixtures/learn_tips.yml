@@ -9,3 +9,37 @@ one: {}
 #
 two: {}
 # column: value
+
+learn_tip_1:
+  id: 1
+  name: Beatae unde.
+  link: http://kertzmannconnelly.name/angelic.torphy
+  description: Corporis officia dolor exercitationem deserunt.
+  user_id: 1
+  lesson_id: 7
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &1 2019-02-03 21:50:29.708232000 Z
+    zone: &2 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: *1
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &3 2019-02-03 21:50:29.708232000 Z
+    zone: *2
+    time: *3
+
+learn_tip_288:
+  id: 288
+  name: Ipsam quae.
+  link: http://vandervorttrantow.name/tad
+  description: Ea cum earum ut ipsa.
+  user_id: 36
+  lesson_id: 8
+  created_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &1 2019-02-03 21:50:37.086587000 Z
+    zone: &2 !ruby/object:ActiveSupport::TimeZone
+      name: Etc/UTC
+    time: *1
+  updated_at: !ruby/object:ActiveSupport::TimeWithZone
+    utc: &3 2019-02-03 21:50:37.086587000 Z
+    zone: *2
+    time: *3
