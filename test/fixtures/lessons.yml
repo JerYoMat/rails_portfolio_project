@@ -5,15 +5,7 @@ lesson_1:
   content: Corporis ad possimus. Fugiat culpa voluptatem. Dolor quis molestiae. Repellat
     veniam omnis. Alias odit omnis.
   order: 1
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &1 2019-02-03 21:50:03.057572000 Z
-    zone: &2 !ruby/object:ActiveSupport::TimeZone
-      name: Etc/UTC
-    time: *1
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &3 2019-02-03 21:50:03.057572000 Z
-    zone: *2
-    time: *3
+  
 
 lesson_2:
   id: 2
@@ -21,12 +13,4 @@ lesson_2:
   content: Qui natus vero. Consequatur molestiae impedit. Ea reiciendis quaerat. Reiciendis
     qui et. Illum molestiae ducimus.
   order: 2
-  created_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &1 2019-02-03 21:50:03.077021000 Z
-    zone: &2 !ruby/object:ActiveSupport::TimeZone
-      name: Etc/UTC
-    time: *1
-  updated_at: !ruby/object:ActiveSupport::TimeWithZone
-    utc: &3 2019-02-03 21:50:03.077021000 Z
-    zone: *2
-    time: *3
+  
