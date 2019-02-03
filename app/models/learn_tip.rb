@@ -1,0 +1,2 @@
+class LearnTip < ApplicationRecord
+end

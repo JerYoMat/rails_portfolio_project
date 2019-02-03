@@ -1,0 +1,2 @@
+class LearnTipsController < ApplicationController
+end
