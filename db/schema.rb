@@ -13,16 +13,30 @@
 ActiveRecord::Schema.define(version: 2019_02_03_193803) do
 
   create_table "learn_tips", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_learn_tips_on_lesson_id"
+    t.index ["user_id"], name: "index_learn_tips_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
+    t.string "name"
+    t.string "content"
+    t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.string "email"
+    t.boolean "has_graduated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
