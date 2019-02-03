@@ -31,6 +31,19 @@ gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'faker'
+
+# For facebook and github buttons
+gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
+# REquired to implement OAuth 
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'dotenv-rails'
+#another way to start a server, however, this one can use ssl
+gem 'pry'
+
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
