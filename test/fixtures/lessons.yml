@@ -1,9 +1,11 @@
 lesson_1:
+  id: 1
   name: Ruby Basics
   content: Corporis ad possimus. Fugiat culpa voluptatem. Dolor quis molestiae. Repellatveniam omnis. Alias odit omnis.
   order: 1
   
 lesson_2:
+  id: 2
   name: Git and Github
   content: Qui natus vero. Consequatur molestiae impedit. Ea reiciendis quaerat. Reiciendisqui et. Illum molestiae ducimus.
   order: 2

@@ -1,4 +1,5 @@
 learn_tip_1:
+  id: 1
   name: Beatae unde.
   link: http://kertzmannconnelly.name/angelic.torphy
   description: Corporis officia dolor exercitationem deserunt.
@@ -7,6 +8,7 @@ learn_tip_1:
   
 
 learn_tip_2:
+  id: 2
   name: Ipsam quae.
   link: http://vandervorttrantow.name/tad
   description: Ea cum earum ut ipsa.

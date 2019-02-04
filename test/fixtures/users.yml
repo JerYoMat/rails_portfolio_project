@@ -1,4 +1,5 @@
 test_user_michael:
+  id: 1
   name: Michael
   email: first_user@test.com
   password_digest: <%= User.digest('password') %>
@@ -6,6 +7,7 @@ test_user_michael:
 
 
 test_user_angelo:
+  id: 2
   name: Angelo
   email: second_user@test.com
   password_digest: <%= User.digest('password') %>
