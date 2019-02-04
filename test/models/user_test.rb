@@ -67,9 +67,4 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user3.valid?
   end 
 
-
-
-
-
-
 end
