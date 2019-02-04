@@ -1,0 +1,43 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="tip_form">
+        <%= render 'shared/tip_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Your Tips</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to LearnHELP</h1>
+
+    <h2>
+      A place for students to provide targeted tips to others feeling the pain of learning something new. 
+    </h2>
+<button class = "standard-input-button">
+    <%=link_to "Sign up now!", signup_path%>
+</button><br><br>
+
+
+<a href="/auth/facebook" class="btn btn-sm btn-social btn-facebook">
+  <span class="fa fa-facebook"></span>
+  Sign in with Facebook
+</a>
+
+<a href="/auth/github" class="btn btn-sm btn-social btn-github">
+  <span class="fa fa-github"></span>
+  Sign in with Github
+</a>
+
+
+  </div>
+   <h3 id='plug'>What is the Flatiron School?  Who are you people? Check it out!     
+  <%= link_to image_tag("learn.png", alt: "Learn Link"),
+              'https://flatironschool.com/' %></h3>
+<% end %>
