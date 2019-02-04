@@ -8,7 +8,9 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
     @learn_tip = learn_tips(:learn_tip_1)
     @user = users(:test_user_michael)
     @other_user = users(:test_user_angelo)
-    @new_learn_tip = LearnTip.create(name: "new tip test name",
+    @new_learn_tip = LearnTip.create(
+      name: "new tip test name",
+      id: 99,
                                      link: "www.somethingawesome.com",
                                      description: "a great resources for mastering X",
                                      lesson_id: 1,
@@ -62,7 +64,8 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
   test 'cannot create learn_tip for different user' do 
     log_in_as(@user)
     assert_no_difference('LearnTip.count') do
-      post learn_tips_url, params: { learn_tip: { name: @new_learn_tip.name,
+      post learn_tips_url, params: { learn_tip: { 
+        name: @new_learn_tip.name,
                                                   link: @new_learn_tip.link,
                                                   description: @new_learn_tip.description,
                                                   lesson_id: @new_learn_tip.lesson_id,
@@ -115,7 +118,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
                                                                 description: "NEW DESCRIPTION",
                                                                 lesson_id: @new_learn_tip.lesson_id,
                                                                 user_id: @user.id } }
-    assert_not @new_learn_tip.description, "NEW DESCRIPTION"
+      assert LearnTip.find(99).description, "a great resources for mastering X"
   end
 
   test "unknown user cannot update learn_tip" do
@@ -125,7 +128,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
                                                                 description: "NEW DESCRIPTION",
                                                                 lesson_id: @new_learn_tip.lesson_id,
                                                                 user_id: @user.id } }
-    assert_not @new_learn_tip.description, "NEW DESCRIPTION"
+    assert LearnTip.find(99).description, "a great resources for mastering X"
   end
 
 
