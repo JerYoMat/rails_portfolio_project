@@ -1,18 +1,15 @@
-
 learn_tip_1:
-  id: 1
   name: Beatae unde.
   link: http://kertzmannconnelly.name/angelic.torphy
   description: Corporis officia dolor exercitationem deserunt.
-  user_id: 1
-  lesson_id: 7
+  user: :test_user_michael
+  lesson: :lesson_1
   
 
-learn_tip_288:
-  id: 288
+learn_tip_2:
   name: Ipsam quae.
   link: http://vandervorttrantow.name/tad
   description: Ea cum earum ut ipsa.
-  user_id: 36
-  lesson_id: 8
+  user: :test_user_angelo
+  lesson: :lesson_2
   
