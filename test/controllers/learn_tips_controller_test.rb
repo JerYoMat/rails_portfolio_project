@@ -45,7 +45,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
                                                   lesson_id: @new_learn_tip.lesson_id,
                                                   user_id: @user.id } }
     end
-    assert_redirected_to lesson_learn_tip_url(Lesson.find(@new_learn_tip.lesson_id))
+    assert_redirected_to lesson_learn_tips_url(Lesson.find(@new_learn_tip.lesson_id))
   end
 
   test "Unknown user cannot create learn_tip" do
@@ -79,20 +79,20 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
   test "owning user can get edit" do
     save_new_tip
     log_in_as(@user)
-    get edit_learn_tip_url(@learn_tip)
+    get edit_learn_tip_url(@new_learn_tip)
     assert_response :success
   end
 
   test "different user cannot get edit" do 
     save_new_tip
     log_in_as(@other_user)
-    get edit_learn_tip_url(@learn_tip)
+    get edit_learn_tip_url(@new_learn_tip)
     assert_redirected_to root_path
   end 
 
   test "unknown user cannot get edit" do 
     save_new_tip
-    get edit_learn_tip_url(@learn_tip)
+    get edit_learn_tip_url(@new_learn_tip)
     assert_redirected_to login_path
   end
 
@@ -104,7 +104,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
                                                                 description: @new_learn_tip.description,
                                                                 lesson_id: @new_learn_tip.lesson_id,
                                                                 user_id: @user.id } }
-    assert_redirected_to learn_tip_url(@learn_tip)
+    assert_redirected_to learn_tip_url(@new_learn_tip)
   end
 
   test "different user cannot update learn_tip" do
@@ -134,7 +134,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
     save_new_tip
     log_in_as(@user)
     assert_difference('LearnTip.count', -1) do
-      delete learn_tip_url(@learn_tip)
+      delete learn_tip_url(@new_learn_tip)
     end
     assert_redirected_to root_path
   end
@@ -143,7 +143,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
     save_new_tip
     log_in_as(@other_user)
     assert_no_difference('LearnTip.count', -1) do
-      delete learn_tip_url(@learn_tip)
+      delete learn_tip_url(@new_learn_tip)
     end
     assert_redirected_to root_path
   end
@@ -151,7 +151,7 @@ class LearnTipsControllerTest < ActionDispatch::IntegrationTest
   test "Unknown user cannot destroy" do
     save_new_tip
     assert_no_difference('LearnTip.count', -1) do
-      delete learn_tip_url(@learn_tip)
+      delete learn_tip_url(@new_learn_tip)
     end
     assert_redirected_to root_path
   end

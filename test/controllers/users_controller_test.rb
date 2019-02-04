@@ -95,25 +95,26 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end 
 
-  test "authorized user can destroy" do
-    log_in_as(@user1)
-    assert_difference('User.count', -1) do
-      delete user_url(@user1)
-    end
-    assert_redirected_to root_path
-  end
+  
   
   test "different user cannot destroy" do
     log_in_as(@user2)
-    assert_no_difference('User.count', -1) do
+    assert_no_difference('User.count') do
       delete user_url(@user1)
     end
     assert_redirected_to root_path
   end
 
   test "unknown user cannot destroy" do
-    assert_no_difference('User.count', -1) do
+    assert_no_difference('User.count') do
       delete user_url(@user1)
+    end
+    assert_redirected_to root_path
+  end
+  test "authorized user can destroy" do
+    log_in_as(@user2)
+    assert_difference('User.count', -1) do
+      delete user_url(@user2)
     end
     assert_redirected_to root_path
   end
