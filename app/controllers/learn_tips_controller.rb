@@ -46,6 +46,7 @@ class LearnTipsController < ApplicationController
     @learn_tip = LearnTip.find(params[:id])
 
   if logged_in?
+  
     if @learn_tip.user == current_user
       @learn_tip.update_attributes(tip_params)
       redirect_to @learn_tip
