@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class LessonTest < ActiveSupport::TestCase
-  def setup
+  setup do
     @lesson = lessons(:lesson_1)  
   end 
 

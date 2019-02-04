@@ -2,14 +2,14 @@ require 'test_helper'
 
 
 class UserTest < ActiveSupport::TestCase
-  def setup
+  setup do
     @user1 = users(:test_user_michael)
     @user2=User.new( name: 'tango',
                      email: 'tango@testusermodel.com', password: 'password', password_confirmation: 'password', has_graduated: false) 
   end 
 
   test 'should be valid'  do
-    assert @user1.valid?  
+    assert @user1.valid?  #Need to investigate issue with secure password
   end 
 
   test 'user name  is required' do
